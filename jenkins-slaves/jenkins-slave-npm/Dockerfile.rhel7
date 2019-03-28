@@ -18,7 +18,7 @@ ENV NODEJS_VERSION=10 \
 ADD src/google-chrome.repo /etc/yum.repos.d/
 ADD src/home-cabelo.repo /etc/yum.repos.d/
 
-RUN yum install owasp-zap
+RUN yum install -y owasp-zap
 
 RUN INSTALL_PKGS="npm nss_wrapper redhat-lsb libXScrnSaver xdg-utils google-chrome-stable" && \
     yum install -y --setopt=tsflags=nodocs \
