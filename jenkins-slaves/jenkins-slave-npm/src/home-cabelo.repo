@@ -1,5 +1,5 @@
 [home-cabelo]
 name=home-cabelo
 type=rpm-md
-baseurl=http://download.opensuse.org/repositories/home:/cabelo/RHEL_7/x86_64
+baseurl=http://download.opensuse.org/repositories/home:/cabelo/RHEL_7
 enabled=1
