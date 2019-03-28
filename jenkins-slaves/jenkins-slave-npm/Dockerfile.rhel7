@@ -16,10 +16,11 @@ ENV NODEJS_VERSION=10 \
     CHROME_BIN=/bin/google-chrome
 
 ADD src/google-chrome.repo /etc/yum.repos.d/
-WORKDIR /etc/yum.repos.d/
-RUN wget https://download.opensuse.org/repositories/home:cabelo/RHEL_7/home:cabelo.repo && yum install owasp-zap
+ADD src/home-cabelo.repo /etc/yum.repos.d/
 
-RUN INSTALL_PKGS="npm nss_wrapper redhat-lsb libXScrnSaver xdg-utils google-chrome-stable owasp-zap" && \
+RUN yum install owasp-zap
+
+RUN INSTALL_PKGS="npm nss_wrapper redhat-lsb libXScrnSaver xdg-utils google-chrome-stable" && \
     yum install -y --setopt=tsflags=nodocs \
       --disablerepo=* \
       --enablerepo=rhel-7-server-rpms \
@@ -27,7 +28,6 @@ RUN INSTALL_PKGS="npm nss_wrapper redhat-lsb libXScrnSaver xdg-utils google-chro
       --enablerepo=rhel-7-server-optional-rpms \
       --enablerepo=rhel-7-server-extras-rpms \
       --enablerepo=google-chrome \
-      --enablerepo=home-cabelo \
       $INSTALL_PKGS && \
     yum clean all -y && \
     rm -rf /var/cache/yum && \
