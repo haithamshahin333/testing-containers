@@ -30,6 +30,9 @@ ENV PATH=/usr/lib/jvm/jre-1.8.0-openjdk/bin:/zap:$PATH
 ENV ZAP_PATH=/zap/zap.sh
 ENV ZAP_PORT=8080
 
+COPY uid.sh /usr/bin/uid_entrypoint.sh
+
 EXPOSE 8080
 USER 1001
-CMD zap.sh -daemon -host 0.0.0.0 -port 8080 -config api.disablekey=true -config api.addrs.addr.regex=true -config api.addrs.addr.name=.*
+
+ENTRYPOINT ["/usr/bin/uid.sh"]
