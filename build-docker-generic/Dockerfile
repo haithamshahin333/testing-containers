@@ -37,6 +37,5 @@ ENV ZAP_PATH=/zap/zap.sh
 ENV ZAP_PORT=8080
 
 EXPOSE 8080
-USER 1001
 
 ENTRYPOINT ["/usr/bin/uid.sh"]
