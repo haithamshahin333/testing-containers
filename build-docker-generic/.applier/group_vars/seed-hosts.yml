@@ -3,8 +3,8 @@ app_name: dockerbuild-zap
 
 build:
   NAME: "{{ app_name }}"
-  SOURCE_REPOSITORY_URL: https://github.com/pcarney8/containers-quickstarts.git
-  SOURCE_REPOSITORY_REF: add-generic-dockerbuild
+  SOURCE_REPOSITORY_URL: https://github.com/haithamshahin333/testing-containers.git
+  SOURCE_REPOSITORY_REF: zap
   SOURCE_CONTEXT_DIR: build-docker-generic
 
 openshift_cluster_content:
