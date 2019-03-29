@@ -30,7 +30,7 @@ ENV PATH=/usr/lib/jvm/jre-1.8.0-openjdk/bin:/zap:$PATH
 ENV ZAP_PATH=/zap/zap.sh
 ENV ZAP_PORT=8080
 
-COPY uid.sh /usr/bin/uid_entrypoint.sh
+COPY uid.sh /usr/bin/uid.sh
 
 EXPOSE 8080
 USER 1001
