@@ -1,3 +1,4 @@
+# https://hub.docker.com/r/owasp/zap2docker-live
 FROM owasp/zap2docker-live
 
 USER root
@@ -10,8 +11,6 @@ RUN chown root:root /home/zap -R && \
     chown root:root /etc/passwd && \
     chmod 660 /etc/passwd
 
-USER 1007
+USER zap
 
-CMD zap.sh -daemon -host 0.0.0.0 -port 8080 -config api.disablekey=true -config api.addrs.addr.regex=true -config api.addrs.addr.name=.*
-
-# ENTRYPOINT ["/usr/local/bin/uid.sh"]
+ENTRYPOINT ["/usr/local/bin/uid.sh"]
