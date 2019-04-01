@@ -2,7 +2,8 @@ FROM owasp/zap2docker-live
 
 USER root
 
-RUN chgrp -Rf root /zap && chmod -Rf g+w /zap
+RUN chown root:root /zap -R && \
+    chmod 777 /zap -R
 
 USER zap
 
