@@ -5,8 +5,8 @@ USER root
 COPY uid.sh /usr/local/bin/uid.sh
 RUN chmod 755 /usr/local/bin/uid.sh
 
-RUN chown root:root /zap -R && \
-    chmod 777 /zap -R && \
+RUN chown root:root /home/zap -R && \
+    chmod 777 /home/zap -R && \
     chown root:root /etc/passwd && \
     chmod 660 /etc/passwd
 
