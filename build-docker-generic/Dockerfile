@@ -2,7 +2,7 @@ FROM owasp/zap2docker-live
 
 USER root
 
-# COPY uid.sh /usr/local/bin/uid.sh
+COPY uid.sh /usr/local/bin/uid.sh
 RUN chmod 755 /usr/local/bin/uid.sh
 
 RUN chown root:root /home/zap -R && \
