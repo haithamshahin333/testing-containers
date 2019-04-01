@@ -27,8 +27,6 @@ RUN mkdir -p /zap/wrk && curl -L -s https://raw.githubusercontent.com/zaproxy/za
     chown root:root /zap -R && \
     chown root:root /etc/passwd && \
     chmod 660 /etc/passwd && \
-    chown root:root /usr/bin/uid.sh && \
-    chmod 755 /usr/bin/uid.sh && \
     chmod 777 /zap -R
 
 ENV JAVA_HOME=/usr/lib/jvm/jre-1.8.0-openjdk/bin
