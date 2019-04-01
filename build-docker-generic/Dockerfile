@@ -12,6 +12,6 @@ RUN chown root:root /home/zap -R && \
 
 USER 1007
 
-zap.sh -daemon -host 0.0.0.0 -port 8080 -config api.disablekey=true -config api.addrs.addr.regex=true -config api.addrs.addr.name=.*
+CMD zap.sh -daemon -host 0.0.0.0 -port 8080 -config api.disablekey=true -config api.addrs.addr.regex=true -config api.addrs.addr.name=.*
 
 # ENTRYPOINT ["/usr/local/bin/uid.sh"]
