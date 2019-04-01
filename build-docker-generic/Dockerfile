@@ -17,7 +17,7 @@ RUN yum install -y java-1.8.0-openjdk-devel && \
     yum clean all && \ 
     rm -rf /var/cache/yum
 
-COPY uid.sh /usr/bin/uid.sh
+RUN useradd -D zap
 
 RUN mkdir -p /zap/wrk && curl -L -s https://raw.githubusercontent.com/zaproxy/zap-admin/master/ZapVersions-dev.xml | \
     grep Linux | grep url | sed 's@^\s*<url>\([^<]*\)</url>.*$@\1@g' | \
@@ -37,5 +37,6 @@ ENV ZAP_PATH=/zap/zap.sh
 ENV ZAP_PORT=8080
 
 EXPOSE 8080
+USER zap
 
 ENTRYPOINT ["/usr/bin/uid.sh"]
