@@ -11,6 +11,6 @@ RUN chown root:root /home/zap -R && \
     chown root:root /etc/passwd && \
     chmod 660 /etc/passwd
 
-USER zap
+USER 1001
 
 ENTRYPOINT ["/usr/local/bin/uid.sh"]
